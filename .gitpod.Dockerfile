@@ -44,5 +44,5 @@ ENV PATH="/opt/R/3.6.3/bin:${PATH}"
 RUN R --no-save -e "library(ospsuite);setwd(system.file('extdata', package = 'ospsuite'));sim=loadSimulation('simple.pkml');pop=loadPopulation('simple_pop.csv');runSimulation(sim, pop)"
 
 # Install testthat and run all package tests
-# RUN R --no-save -e "install.packages('testthat', repos='http://cran.rstudio.com/')" 
-# RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite')); source('testthat.R')" 
+RUN R --no-save -e "install.packages('testthat', repos='http://cran.rstudio.com/')" 
+RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite')); source('testthat.R')" 
