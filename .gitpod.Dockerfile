@@ -16,7 +16,7 @@ RUN apt-get -y update && \
 RUN apt-get -y install git nuget libcurl4-openssl-dev libssl-dev libxml2-dev openmpi-bin openmpi-common
 
 # Install R package dependencies
-RUN R --no-save -e "install.packages(c('R6', 'FME', 'hash'), repos='http://cran.rstudio.com/')"
+RUN R --no-save -e "install.packages(c('R6', 'FME', 'hash', 'stringr'), repos='http://cran.rstudio.com/')"
 
 # Install mono
 RUN apt-get -y install gnupg ca-certificates && \
