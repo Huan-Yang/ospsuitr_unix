@@ -4,7 +4,7 @@ library(ospsuite)
 dataPath <- file.path(path.package("ospsuite", quiet = FALSE), "extdata", fsep = .Platform$file.sep)
 simFilePath <- file.path(dataPath, "simple.pkml", fsep = .Platform$file.sep)
 sim <- loadSimulation(simFilePath)
-print(sim$)
+print(sim)
 
 # # Get the parameter "Dose"
 # doseParamPath <- "Applications|IV 250mg 10min|Application_1|ProtocolSchemaItem|Dose"
