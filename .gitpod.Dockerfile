@@ -32,11 +32,10 @@ ADD https://github.com/Open-Systems-Pharmacology/OSPSuite-R/releases/download/v1
 ADD https://github.com/esqLABS/OSPSuite.ParameterIdentification/releases/download/v1.1.0/ospsuite.parameteridentification_1.1.0.tar.gz /root/
 
 
-
 # Install rClr and ospsuite
 RUN R CMD INSTALL /root/rClr_0.8.3_Ubuntu18.tar.gz && \
-    R CMD INSTALL /root/ospsuite_10.0.25_ubuntu18.tar.gz && \
-    R CMD INSTALL /root/ospsuite.parameteridentification_1.1.0.tar.gz --install-tests
+    R CMD INSTALL /root/ospsuite_10.0.25_ubuntu18.tar.gz --install-tests
+    # R CMD INSTALL /root/ospsuite.parameteridentification_1.1.0.tar.gz --install-tests
 RUN rm -rf /root/rClr_0.8.3_Ubuntu18.tar.gz \
         /root/ospsuite_10.0.25_ubuntu18.tar.gz \
         /root/ospsuite.parameteridentification_1.1.0.tar.gz
