@@ -13,17 +13,17 @@ RUN apt-get -y update && \
     dotnet --version
 
 # Install git, nuget and libraries
-RUN apt-get -y install git nuget libcurl4-openssl-dev libssl-dev libxml2-dev openmpi-bin openmpi-common
+RUN apt-get -y install git nuget libcurl4-openssl-dev libssl-dev libxml2-dev openmpi-bin openmpi-common unzip
 
 # Install R package dependencies
-RUN R --no-save -e "install.packages(c('R6', 'FME', 'hash', 'stringr', 'readr', 'devtools'), repos='http://cran.rstudio.com/')"
+RUN R --no-save -e "install.packages(c('R6', 'FME', 'hash', 'stringr', 'readr', 'devtools', 'openxlsx'), repos='http://cran.rstudio.com/')"
 
 # Install mono
 RUN apt-get -y install gnupg ca-certificates && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
     echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic/snapshots/5.18 main" | tee /etc/apt/sources.list.d/mono-official-stable.list && \
     apt-get -y update && \
-    apt-get -y install mono-complete
+    apt-get -y install mono-complete 
 
 # Get software
 ADD https://github.com/Open-Systems-Pharmacology/rClr/releases/download/v0.8.3_Linux/rClr_0.8.3_Ubuntu18.tar.gz /root/
