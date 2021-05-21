@@ -34,9 +34,9 @@ ADD https://github.com/esqLABS/OSPSuite.ParameterIdentification/releases/downloa
 
 # Install rClr and ospsuite
 RUN R CMD INSTALL /root/rClr_0.8.3_Ubuntu18.tar.gz && \
-    R CMD INSTALL /root/ospsuite_10.0.25_ubuntu18.tar.gz --install-tests \
+    R CMD INSTALL /root/ospsuite_10.0.25_ubuntu18.tar.gz --install-tests 
     # R CMD INSTALL /root/ospsuite.parameteridentification_1.1.0.tar.gz --install-tests
-RUN R CMD INSTALL /root/ospsuite.parameteridentification_1.1.0.tar.gz
+# RUN R CMD INSTALL /root/ospsuite.parameteridentification_1.1.0.tar.gz
 
 RUN rm -rf /root/rClr_0.8.3_Ubuntu18.tar.gz \
         /root/ospsuite_10.0.25_ubuntu18.tar.gz \
